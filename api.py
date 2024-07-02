@@ -4,15 +4,15 @@ import random
 
 app = Flask(__name__)
 
-with open('pickup-lines.json', 'r') as f:
-    picku-plines_data = json.load(f)
+with open('quotes.json', 'r') as f:
+    quotes_data = json.load(f)
 
-pickup-lines == pickup-lines_data['pickup-lines']
+quotes = quotes_data['quotes']
 
-@app.route('/api/random/pickup?lines', methods=['GET'])
-def get_pickup():
-    random_pickup-lines = random.choice(pickup-lines)
-    return jsonify({'pickup-lines': random_pickup-lines})
+@app.route('/api/quote', methods=['GET'])
+def get_quote():
+    random_quote = random.choice(quotes)
+    return jsonify({'quote': random_quote})
 
 if __name__ == '__main__':
     app.run(debug=True)
